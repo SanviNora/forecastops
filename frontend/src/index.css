@@ -1,0 +1,292 @@
+:root {
+  --bg: #0b1220;
+  --bg-2: #111a2b;
+  --surface: #162033;
+  --border: #2a3a55;
+  --text: #e8eef8;
+  --muted: #8ea0b8;
+  --accent: #3db8a0;
+  --accent-2: #7aa2ff;
+  --success: #3ecf8e;
+  --warning: #e0b04a;
+  --danger: #ef6b6b;
+  --staging: #c9a227;
+  --production: #3ecf8e;
+  --archived: #6d7b8f;
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(61, 184, 160, 0.08), transparent 50%),
+    var(--bg);
+}
+
+a {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: var(--accent);
+  color: #06221c;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+button.secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 500;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input,
+select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+
+.layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.9rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(22, 32, 51, 0.92);
+  backdrop-filter: blur(8px);
+}
+
+.nav-brand {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.2rem 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.card h1,
+.card h2 {
+  margin: 0 0 0.75rem;
+}
+
+.card h1 {
+  font-size: 1.35rem;
+}
+
+.card h2 {
+  font-size: 1.05rem;
+}
+
+.lede {
+  color: var(--muted);
+  margin: 0 0 1rem;
+  max-width: 70ch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.48rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.toolbar {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  align-items: end;
+}
+
+.toolbar .field {
+  min-width: 180px;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.login-card {
+  width: 420px;
+}
+
+.demo-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.badge.none {
+  background: #243049;
+  color: var(--muted);
+}
+
+.badge.staging {
+  background: rgba(201, 162, 39, 0.18);
+  color: var(--staging);
+}
+
+.badge.production {
+  background: rgba(62, 207, 142, 0.16);
+  color: var(--production);
+}
+
+.badge.archived {
+  background: #243049;
+  color: var(--archived);
+}
+
+.badge.stable {
+  background: rgba(62, 207, 142, 0.16);
+  color: var(--success);
+}
+
+.badge.shift {
+  background: rgba(224, 176, 74, 0.16);
+  color: var(--warning);
+}
+
+.badge.drifted {
+  background: rgba(239, 107, 107, 0.16);
+  color: var(--danger);
+}
+
+.psi-card.drifted,
+.psi-card.shift {
+  border-color: var(--danger);
+}
+
+.psi-card.shift {
+  border-color: var(--warning);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.metric {
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-value {
+  font-size: 1.6rem;
+  font-weight: 650;
+}
+
+.spark {
+  display: block;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.row-actions {
+  display: flex;
+  gap: 0.4rem;
+}

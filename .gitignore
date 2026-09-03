@@ -1,0 +1,15 @@
+.venv/
+venv/
+node_modules/
+dist/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.DS_Store
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+backend/artifacts/*.joblib
+!backend/artifacts/.gitkeep
